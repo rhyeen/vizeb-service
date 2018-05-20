@@ -1,0 +1,36 @@
+{
+  "name": "vizeb-service",
+  "version": "0.0.0",
+  "description": "Vizeb Service: Back-end for Vizeb",
+  "license": "UNLICENSED",
+  "author": "Ryan Saunders contact.ryan.saunders@gmail.com",
+  "scripts": {
+    "local": "nodemon src/server/bin/run.js --config nodemon.json",
+    "start": "node src/server/bin/run.js",
+    "lint": "node_modules/.bin/eslint src",
+    "lint-fix": "node_modules/.bin/eslint src --fix",
+    "test": "istanbul cover _mocha -- --colors --recursive src/server/**/*.spec.js",
+    "test-coverage": "npm run test && npm run _test-coverage",
+    "_test-coverage": "istanbul check-coverage --statements 75 --recursive"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.0",
+    "bunyan": "^1.8.12",
+    "cookie-parser": "~1.4.3",
+    "express": "~4.16.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1",
+    "istanbul": "^0.4.5",
+    "proxyquire": "^2.0.1",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.17.4",
+    "supertest": "^3.1.0",
+    "supertest-session": "^3.3.0"
+  }
+}
